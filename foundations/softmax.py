@@ -9,7 +9,5 @@ class Solution:
         # Hint: subtract max(z) for numerical stability before computing exp
         # return np.round(your_answer, 4)
         z_corrected = z - np.max(z)
-        numerator = np.exp(z_corrected)
-        denom = np.sum(np.exp(z_corrected))
-
-        return np.round(numerator / denom, 4)
+        exps = np.exp(z_corrected)
+        return np.round(exps / np.sum(exps), 4)
